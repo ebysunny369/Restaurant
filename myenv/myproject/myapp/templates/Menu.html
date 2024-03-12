@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Food Lover Title</title>
+<style>
+
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body { padding: 2rem; }
+
+main {
+  display: grid;
+  gap: 1.5rem;
+  font: 0.75rem/1.6 helvetica,sans-serif;
+
+  & h1 {
+    font-family: 'arial-black';
+  }
+}
+
+nav {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.7rem;
+
+  & button {
+    border: none;
+    background-color: transparent;
+    font-size: 0.75rem;
+    cursor: pointer;
+    color: rgba(0,0,0,0.7);
+  }
+}
+
+.active {
+  font-weight: 900;
+  color: black;
+}
+
+.menu {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap: 1.5rem;
+
+  & li {
+    & img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      border-radius: 0.25rem;
+    }
+
+    & h2 {
+      color: rgba(0,0,0,0.7);
+      font-size: 0.9rem;
+      margin: 0.25rem 0;
+    }
+
+    & p {
+      color: rgba(0,0,0,0.35);
+    }
+  }
+}
+
+.hide { display: none; }
+
+::view-transition-group(item-1) { animation-duration: 0.5s; }
+::view-transition-group(item-2) { animation-duration: 0.5s; }
+::view-transition-group(item-3) { animation-duration: 0.5s; }
+::view-transition-group(item-4) { animation-duration: 0.5s; }
+::view-transition-group(item-5) { animation-duration: 0.5s; }
+::view-transition-group(item-6) { animation-duration: 0.5s; }
+::view-transition-group(item-7) { animation-duration: 0.5s; }
+::view-transition-group(item-8) { animation-duration: 0.5s; }
+::view-transition-group(item-9) { animation-duration: 0.5s; }
+::view-transition-group(item-10) { animation-duration: 0.5s; }
+::view-transition-group(item-11) { animation-duration: 0.5s; }
+::view-transition-group(item-12) { animation-duration: 0.5s; }
+::view-transition-group(item-13) { animation-duration: 0.5s; }
+::view-transition-group(item-14) { animation-duration: 0.5s; }
+::view-transition-group(item-15) { animation-duration: 0.5s; }
+::view-transition-group(item-16) { animation-duration: 0.5s; }
+::view-transition-group(item-17) { animation-duration: 0.5s; }
+::view-transition-group(item-18) { animation-duration: 0.5s; }
+::view-transition-group(item-19) { animation-duration: 0.5s; }
+::view-transition-group(item-20) { animation-duration: 0.5s; }
+
+</style>
+</head>
+<body>
+<main>
+  <h1>MENU</h1>
+  <nav>
+    <button class='active' data-tag='all'>All</button>
+    <button data-tag='apetizers'>Apetizers</button>
+    <button data-tag='entries'>Entries</button>
+    <button data-tag='desserts'>Desserts</button>
+    <button data-tag='drinks'>Drinks</button>
+  </nav>
+  <ul class='menu'>
+    <li class='item' data-type='desserts'>
+      <img src='https://source.unsplash.com/W-p5xm_hGSw'>
+      <h2>Chocolate Ice Cream</h2>
+      <p>Creamy rich cholcoate ice cream with a sprinkle of nuts and fruits</p>
+    </li>
+    <li class='item' data-type='drinks'>
+      <img src='https://source.unsplash.com/2uSnxq3M4GE'>
+      <h2>Classic Pilsner</h2>
+      <p>A pale lager with a crisp, refreshing taste that's lightly hopped</p>
+    </li>
+    <li class='item' data-type='entries'>
+      <img src='https://source.unsplash.com/12eHC6FxPyg'>
+      <h2>Pesto Pasta</h2>
+      <p>Freshly made Pesto pasta with sliced tomatoes</p>
+    </li>
+    <li class='item' data-type='entries'>
+      <img src='https://source.unsplash.com/oYvZ-stypr4'>
+      <h2>Vegetarian Delight</h2>
+      <p>Cooked rice with quinoa salad, pinto beans, and asparagus</p>
+    </li>
+    <li class='item' data-type='apetizers'>
+      <img src='https://source.unsplash.com/xeTv9N2FjXA'>
+      <h2>House Salad</h2>
+      <p>Fresh local vegetables pair with homemade sausages</p>
+    </li>
+    <li class='item' data-type='entries'>
+      <img src='https://source.unsplash.com/szQFiGZH8wU'>
+      <h2>Coconut Rice</h2>
+      <p>Indonesian coconut rice pair with fried pork, boiled eggs and cucumber</p>
+    </li>
+    <li class='item' data-type='apetizers'>
+      <img src='https://source.unsplash.com/17SvN08MV_s'>
+      <h2>Pumpkin Soup</h2>
+      <p>Homemade pumpkin soup with pumpkin seeds and blue cheese</p>
+    </li>
+    <li class='item' data-type='apetizers'>
+      <img src='https://source.unsplash.com/uBnIROT_p5M'>
+      <h2>Tomato Soup</h2>
+      <p>Slow cooked tomato soup with a side of classic Dutch bread</p>
+    </li>
+    <li class='item' data-type='entries'>
+      <img src='https://source.unsplash.com/SDprf7W3NUc'>
+      <h2>Mississipi Gumbo</h2>
+      <p>Southern cajun flavored gumbo with shrimps and a slice of garlic bread</p>
+    </li>
+    <li class='item' data-type='entries'>
+      <img src='https://source.unsplash.com/7WJV-SDSj6c'>
+      <h2>Porterhouse Special</h2>
+      <p>Succulent porterhouse steak with a side of mashed potato and brocoli</p>
+    </li>
+    <li class='item' data-type='entries'>
+      <img src='https://source.unsplash.com/8eIuOTnqbjA'>
+      <h2>Jamaican Chicken</h2>
+      <p>Exotic Jamaican chicken pair with mango salad, rice and peas</p>
+    </li>
+    <li class='item' data-type='entries'>
+      <img src='https://source.unsplash.com/XRcwELmjLgs'>
+      <h2>Classic Pork Chop</h2>
+      <p>Succluently grilled pork chop pair with garlic fries</p>
+    </li>
+    <li class='item' data-type='desserts'>
+      <img src='https://source.unsplash.com/8yji1QSu58U'>
+      <h2>Rose Pudding</h2>
+      <p>Rose flavor tapioca pudding</p>
+    </li>
+    <li class='item' data-type='apetizers'>
+      <img src='https://source.unsplash.com/1ugpo9WYPXs'>
+      <h2>Spring Rolls</h2>
+      <p>Indonesian style spring roll fill with carrots, celery, and shrimp</p>
+    </li>
+    <li class='item' data-type='desserts'>
+      <img src='https://source.unsplash.com/EbRBhZ-I_p8'>
+      <h2>Blueberry Cheese Cake</h2>
+      <p>Rich creamy melt in your mouth blueberry cheese cake</p>
+    </li>
+    <li class='item' data-type='drinks'>
+      <img src='https://source.unsplash.com/6n_kXdPJa3s'>
+      <h2>Lemonade</h2>
+      <p>Freshly squeeze lemonade with dash of honey</p>
+    </li>
+    <li class='item' data-type='desserts'>
+      <img src='https://source.unsplash.com/vT5xrj3z1OE'>
+      <h2>Strawberry Banana Crepe</h2>
+      <p>Classic souther strawberry banana crepe</p>
+    </li>
+    <li class='item' data-type='apetizers'>
+      <img src='https://source.unsplash.com/SH8_JmrsQcw'>
+      <h2>Clam Chowder</h2>
+      <p>Classic New England cleam chowder</p>
+    </li>
+    <li class='item' data-type='entries'>
+      <img src='https://source.unsplash.com/tkfRSPt-jdk'>
+      <h2>Grilled Salmon</h2>
+      <p>Freshly grilled salmon with side of beets salad, caramel carrots, and garlic sauce</p>
+    </li>
+    <li class='item' data-type='drinks'>
+      <img src='https://source.unsplash.com/NZMeJsrMC8U'>
+      <h2>Expresso</h2>
+      <p>Classic freshly grounded Italian expresso</p>
+    </li>
+  </ul>
+</main>
+<script>
+  const items = document.querySelectorAll('.item');
+
+function insertViewTransitionName() {
+  items.forEach((item,i) => {
+    item.style.viewTransitionName = `item-${i++}`;
+  });
+}
+
+function updateBtn(btn) {
+  document.querySelector('.active').classList.remove('active');
+  btn.classList.add('active');
+}
+
+const resetMenu = () => items.forEach((item) => item.classList.remove('hide'));
+
+function updateMenu(tag) {
+  resetMenu();
+  items.forEach((item) => {
+    if (item.dataset.type !== tag && tag !== 'all') {
+      item.classList.add('hide');
+    }
+  })
+}
+
+function activate(e) {
+  updateMenu(e.target.dataset.tag);
+  updateBtn(e.target)
+}
+
+function init(e) {
+  if (!e.target.matches('button')) return;
+  insertViewTransitionName();
+  !document.startViewTransition
+    ? activate(e)
+    : document.startViewTransition(() => activate(e));
+}
+
+window.addEventListener('click',init,false);
+</script>
+</body>
+</html>
